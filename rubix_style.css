@@ -1,0 +1,111 @@
+#cube_container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    width: 400px;
+    height: 400px;
+    -moz-perspective: 1000px;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+#rubix_cube {
+    width: inherit;
+    height: inherit;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+#info {
+    font-size: 30px;
+    position: absolute;
+    left: 40px;
+    top: 10px;
+}
+
+
+.face {
+    overflow: hidden;
+    border-radius: 20px;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    padding: 0px;
+    border: 1px black;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.right_face {
+    -webkit-transform: rotateY(-90deg) translateZ(200px);
+    -moz-transform: rotateY(-90deg) translateZ(200px);
+    -o-transform: rotateY(-90deg) translateZ(200px);
+    -ms-transform: rotateY(-90deg) translateZ(200px);
+    transform: rotateY(-90deg) translateZ(200px);
+}
+
+.left_face {
+    -webkit-transform: rotateY(90deg) translateZ(200px);
+    -moz-transform: rotateY(90deg) translateZ(200px);
+    -o-transform: rotateY(90deg) translateZ(200px);
+    -ms-transform: rotateY(90deg) translateZ(200px);
+    transform: rotateY(90deg) translateZ(200px);
+}
+
+.top_face {
+    -webkit-transform: rotateX(90deg) translateZ(200px);
+    -moz-transform: rotateX(90deg) translateZ(200px);
+    -o-transform: rotateX(90deg) translateZ(200px);
+    -ms-transform: rotateX(90deg) translateZ(200px);
+    transform: rotateX(90deg) translateZ(200px);
+}
+
+.bottom_face {
+    -webkit-transform: rotateX(90deg) translateZ(-200px);
+    -moz-transform: rotateX(90deg) translateZ(-200px);
+    -o-transform: rotateX(90deg) translateZ(-200px);
+    -ms-transform: rotateX(90deg) translateZ(-200px);
+    transform: rotateX(90deg) translateZ(-200px);
+}
+
+.front_face {
+    -webkit-transform: translateZ(200px);
+    -moz-transform: translateZ(200px);
+    -o-transform: translateZ(200px);
+    -ms-transform: translateZ(200px);
+    transform: translateZ(200px);
+}
+
+.back_face {
+    -webkit-transform: translateZ(-200px);
+    -moz-transform: translateZ(-200px);
+    -o-transform: translateZ(-200px);
+    -ms-transform: translateZ(-200px);
+    transform: translateZ(-200px);
+}
+
+.white {
+    background-color: white;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+
