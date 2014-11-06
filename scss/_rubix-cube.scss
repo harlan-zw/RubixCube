@@ -1,0 +1,126 @@
+/**
+* Dimesnions for diff devices
+*/
+$cube-md-size: 400px;
+$cube-sm-size: 250px;
+$cube-xs-size: 150px;
+
+$cube-transparency: 0.7;
+
+#cube-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: $cube-xs-size / 2;
+    width: $cube-xs-size;
+    height: $cube-xs-size;
+    /*perspective is the highest z-index of the cube rotating */
+    @include perspective($cube-xs-size * 2);
+    @include breakpoint($screen-sm) {
+        margin-top: $cube-sm-size / 2;
+        @include perspective($cube-sm-size * 2);
+        width: $cube-sm-size;
+        height: $cube-sm-size;
+    }
+    @include breakpoint($screen-md) {
+        margin-top: $cube-md-size / 2;
+        @include perspective($cube-md-size * 2);
+
+        width: $cube-md-size;
+        height: $cube-md-size;
+    }
+}
+
+#rubix-cube {
+    width: inherit;
+    height: inherit;
+    @include transform-style(preserve-3d);
+}
+
+.cube-slot:hover {
+    @include opacity(0.5);
+}
+
+
+.cube-face .col-xs-4 {
+    height: 33%;
+    border: 1px solid black;
+}
+
+.cube-face {
+    overflow: hidden;
+    border-radius: 5px;
+    position: absolute;
+    width: $cube-xs-size;
+    height: $cube-xs-size;
+    padding: 0;
+    background-color: rgba(0, 0, 0, $cube-transparency);
+    @include breakpoint($screen-sm) {
+        width: $cube-sm-size;
+        border-radius: 10px;
+
+        height: $cube-sm-size;
+    }
+    @include breakpoint($screen-md) {
+        border-radius: 20px;
+
+        width: $cube-md-size;
+        height: $cube-md-size;
+    }
+}
+@mixin defineFace($name, $rotation: null) {
+    .cube-#{$name}-face {
+
+        @include transform($rotation translateZ($cube-xs-size/2));
+
+        @include breakpoint($screen-sm) {
+            @include transform($rotation translateZ($cube-sm-size/2));
+        }
+        @include breakpoint($screen-md) {
+            @include transform($rotation translateZ($cube-md-size/2));
+
+        }
+    }
+}
+@include defineFace('right', rotateY(-90deg));
+@include defineFace('left', rotateY(90deg));
+@include defineFace('top', rotateX(-90deg));
+@include defineFace('bottom', rotateX(90deg));
+@include defineFace('front');
+
+
+.cube-back-face {
+    @include translateZ(-$cube-xs-size/2);
+    @include breakpoint($screen-sm) {
+        @include translateZ(-$cube-sm-size/2);
+    }
+    @include breakpoint($screen-md) {
+        @include translateZ(-$cube-md-size/2);
+
+    }
+}
+
+.white {
+    background-color: white;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+
